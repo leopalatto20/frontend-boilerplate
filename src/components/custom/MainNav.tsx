@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Ghost, Home as HomeIcon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const navItems = [
   { name: "Home", href: "/", icon: <HomeIcon className="h-4 w-4 text-gray-500" /> },
@@ -22,6 +23,7 @@ export default function MainNav() {
       </Link>
 
       <div className="flex gap-2">
+        <ModeToggle />
         {navItems.map((item, index) => (
           <Button asChild key={index} variant="ghost">
             <Link to={item.href} className="flex items-center gap-2 text-sm font-medium">
